@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @billing_detail.event %>
+</p>
+
+<p>
+  <strong>Paid date:</strong>
+  <%= @billing_detail.paid_date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @billing_detail.location %>
+</p>
+
+<p>
+  <strong>Total Amount:</strong>
+  <%= @billing_detail.total_amount %>
+</p>
+
+<p>
+  <strong>Amount Paid By:</strong>
+  <%= @billing_detail.name %>
+</p>
+<p>
+  <strong>Amount:</strong>
+  <%= @billing_detail.amount %>
+</p>
+
+
+<%= link_to 'Edit', edit_billing_detail_path(@billing_detail) %> |
+<%= link_to 'Back', billing_details_path %>

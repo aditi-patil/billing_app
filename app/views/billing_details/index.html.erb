@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Billing Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Paid date</th>
+      <th>Location</th>
+      <th>Total Amount</th>
+      <th>Amount Paid by</th>
+      <th>Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @billing_details.each do |billing_detail| %>
+      <tr>
+        <td><%= billing_detail.event %></td>
+        <td><%= billing_detail.paid_date %></td>
+        <td><%= billing_detail.location %></td>
+        <td><%= billing_detail.total_amount%></td>
+        <td><%= billing_detail.name %></td>
+        <td><%= billing_detail.amount %></td>
+        <td><%= link_to 'Show', billing_detail %></td>
+        <td><%= link_to 'Edit', edit_billing_detail_path(billing_detail) %></td>
+        <td><%= link_to 'Destroy', billing_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <%= link_to :calculate_total, billing_details_calculate_total_path %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Billing detail', new_billing_detail_path %>

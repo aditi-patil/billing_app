@@ -1,0 +1,45 @@
+<%= form_for(@billing_detail) do |f| %>
+  <% if @billing_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@billing_detail.errors.count, "error") %> prohibited this billing_detail from being saved:</h2>
+
+      <ul>
+      <% @billing_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :event %><br>
+    <%= f.select :event, ['Lunch', 'Snacks', 'Dinner'] %>
+    <%#= f.text_field :event %>
+  </div>
+  <div class="field">
+    <%= f.label :paid_date %><br>
+    <%= f.text_field :paid_date %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_area :location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :total_amount %><br>
+    <%= f.text_field :total_amount %>
+  </div>
+
+  <div>
+    <%= f.label :amount_paid_by %><br>
+    <%= f.select :name, ['Amar', 'Akbar', 'Anthony'] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

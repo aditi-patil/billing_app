@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event: MyString
+  paid_date: 
+  location: MyText
+  amount: 9.99
+
+two:
+  event: MyString
+  paid_date: 
+  location: MyText
+  amount: 9.99
